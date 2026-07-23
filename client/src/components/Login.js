@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-function Login({ onLogin }) {
+function Login({ onLogin, setPage }) {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -60,16 +60,14 @@ onLogin(response.data.user);
       <button type="submit">
         Login
       </button>
+      <button
+  type="button"
+  onClick={() => setPage("home")}
+>
+  ← Back
+</button>
 
     </form>
-
-    <div className="demo-users">
-      <h3>Demo Accounts</h3>
-
-      <p><strong>Admin:</strong> admin / admin123</p>
-
-      <p><strong>User:</strong> user / user123</p>
-    </div>
 
   </div>
 );

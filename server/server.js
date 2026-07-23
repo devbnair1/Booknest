@@ -4,6 +4,7 @@ const connectDB = require("./config/db");
 
 const bookRoutes = require("./routes/bookRoutes");
 const userRoutes = require("./routes/userRoutes");
+const purchaseRoutes = require("./routes/purchaseRoutes");
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 // Routes
 app.use("/api/books", bookRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/purchases", purchaseRoutes);
 
 // Test Route
 app.get("/", (req, res) => {
